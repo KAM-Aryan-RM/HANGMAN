@@ -36,15 +36,24 @@ hangman = [
      -----
      |   |
      O   |
-    /|\\  |
+    /|   |
          |
     =========
     """,
+     """
+      -----
+      |   |
+      O   |
+     /|\\  |
+          |
+        =========
+        """
+        ,
     """
      -----
      |   |
      O   |
-    /|\\  |
+    /|\\ |
     /    |
     =========
     """,
@@ -53,7 +62,7 @@ hangman = [
      |   |
      O   |
     /|\\  |
-    / \\  |
+    / \\ |
     =========
     """
 ]
@@ -100,5 +109,6 @@ while wrong_guesses < max_attempts:
 else:
     print(hangman[wrong_guesses])
     print("Game Over!")
+    print("Try again 🔄")
     print("The fruit was:", word)
 
