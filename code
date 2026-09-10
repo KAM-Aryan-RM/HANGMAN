@@ -1,10 +1,10 @@
 import random
 
-words = ["apple", "banana", "mango", "orange", "grapes", "tomato" , "peach"]
+words = ["football", "basketball", "tennis", "swimming", "cricket", "golf" , "boxing" , "rugby"]
 
 word = random.choice(words)
 guessed = []
-wrong_guesses = 0
+Wrong_guess_count = 0
 max_attempts = 6
 
 hangman = [
@@ -67,10 +67,10 @@ hangman = [
     """
 ]
 
-print("Welcome to Hangman!")
-print("Hint: The word is a fruit.")
+print("Welcome to Hangman Game!")
+print("Hint: The word is a Sport.")
 
-while wrong_guesses < max_attempts:
+while Wrong_guess_count < max_attempts:
 
     display = ""
 
@@ -80,12 +80,13 @@ while wrong_guesses < max_attempts:
         else:
             display += "_ "
 
-    print(hangman[wrong_guesses])
+    print(hangman[Wrong_guess_count])
     print("Word:", display)
 
     if "_" not in display:
-        print("Congratulations! You won!")
-        print("The fruit was:", word)
+        print("Congratulations! You won the Game🎉.")
+        print("The Sport was:", word)
+        print("Never tried this sport before? There is no better time than now!")
         break
 
     guess = input("Guess a letter: ").lower()
@@ -95,7 +96,8 @@ while wrong_guesses < max_attempts:
         continue
 
     if guess in guessed:
-        print("You already guessed that letter.")
+        print('''You already guessed this letter.
+        Try another letter.''')
         continue
 
     guessed.append(guess)
@@ -103,12 +105,12 @@ while wrong_guesses < max_attempts:
     if guess in word:
         print("Correct guess!")
     else:
-        wrong_guesses += 1
+        Wrong_guess_count += 1
         print("Wrong guess!")
 
 else:
-    print(hangman[wrong_guesses])
-    print("Game Over!")
-    print("Try again 🔄")
-    print("The fruit was:", word)
+    print(hangman[Wrong_guess_count])
+    print("Game Over!🙈")
+    print("The Sport was:", word)
+    print("Never give up! Every defeat is a lesson on the road to victory.")
 
